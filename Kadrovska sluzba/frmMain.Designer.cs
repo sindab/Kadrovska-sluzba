@@ -37,7 +37,6 @@
             this.employeesBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.customersBarButtonItem = new DevExpress.XtraBars.BarButtonItem();
             this.mnuRadnici = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupNavigation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -46,13 +45,18 @@
             this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
             this.employeesNavBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.emloyeeNavBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.employeesNavigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ucRadnici1 = new Kadrovska_sluzba.ucRadnici();
             this.employeesLabelControl = new DevExpress.XtraEditors.LabelControl();
-            this.customersNavigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.employeeNavigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ucRadnik1 = new Kadrovska_sluzba.ucRadnik();
             this.customersLabelControl = new DevExpress.XtraEditors.LabelControl();
+            this.sifarniciNavigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.ucSifarnici1 = new Kadrovska_sluzba.ucSifarnici();
+            this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).BeginInit();
@@ -60,7 +64,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).BeginInit();
             this.navigationFrame.SuspendLayout();
             this.employeesNavigationPage.SuspendLayout();
-            this.customersNavigationPage.SuspendLayout();
+            this.employeeNavigationPage.SuspendLayout();
+            this.sifarniciNavigationPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabbedView
@@ -79,7 +84,7 @@
             this.mnuRadnici,
             this.barButtonItem1});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 48;
+            this.ribbonControl.MaxItemId = 49;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -129,15 +134,6 @@
             this.mnuRadnici.Name = "mnuRadnici";
             this.mnuRadnici.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Radnik";
-            this.barButtonItem1.Id = 47;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
-            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -185,13 +181,14 @@
             this.navBarControl.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.employeesNavBarGroup,
-            this.emloyeeNavBarGroup});
+            this.emloyeeNavBarGroup,
+            this.navBarGroup1});
             this.navBarControl.Location = new System.Drawing.Point(0, 143);
             this.navBarControl.Name = "navBarControl";
             this.navBarControl.OptionsLayout.StoreAppearance = true;
-            this.navBarControl.OptionsNavPane.ExpandedWidth = 40;
+            this.navBarControl.OptionsNavPane.ExpandedWidth = 34;
             this.navBarControl.PaintStyleKind = DevExpress.XtraNavBar.NavBarViewKind.NavigationPane;
-            this.navBarControl.Size = new System.Drawing.Size(40, 380);
+            this.navBarControl.Size = new System.Drawing.Size(34, 380);
             this.navBarControl.TabIndex = 0;
             this.navBarControl.Text = "navBarControl";
             this.navBarControl.Visible = false;
@@ -208,21 +205,28 @@
             this.emloyeeNavBarGroup.Caption = "Radnik";
             this.emloyeeNavBarGroup.Name = "emloyeeNavBarGroup";
             // 
+            // navBarGroup1
+            // 
+            this.navBarGroup1.Caption = "Šifarnici";
+            this.navBarGroup1.Name = "navBarGroup1";
+            // 
             // navigationFrame
             // 
             this.navigationFrame.Appearance.BackColor = System.Drawing.Color.White;
             this.navigationFrame.Appearance.Options.UseBackColor = true;
             this.navigationFrame.Controls.Add(this.employeesNavigationPage);
-            this.navigationFrame.Controls.Add(this.customersNavigationPage);
+            this.navigationFrame.Controls.Add(this.employeeNavigationPage);
+            this.navigationFrame.Controls.Add(this.sifarniciNavigationPage);
             this.navigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.navigationFrame.Location = new System.Drawing.Point(40, 143);
+            this.navigationFrame.Location = new System.Drawing.Point(34, 143);
             this.navigationFrame.Name = "navigationFrame";
             this.navigationFrame.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.employeesNavigationPage,
-            this.customersNavigationPage});
+            this.employeeNavigationPage,
+            this.sifarniciNavigationPage});
             this.navigationFrame.RibbonAndBarsMergeStyle = DevExpress.XtraBars.Docking2010.Views.RibbonAndBarsMergeStyle.Always;
             this.navigationFrame.SelectedPage = this.employeesNavigationPage;
-            this.navigationFrame.Size = new System.Drawing.Size(750, 380);
+            this.navigationFrame.Size = new System.Drawing.Size(756, 380);
             this.navigationFrame.TabIndex = 0;
             this.navigationFrame.Text = "navigationFrame";
             // 
@@ -231,16 +235,16 @@
             this.employeesNavigationPage.Controls.Add(this.ucRadnici1);
             this.employeesNavigationPage.Controls.Add(this.employeesLabelControl);
             this.employeesNavigationPage.Name = "employeesNavigationPage";
-            this.employeesNavigationPage.Size = new System.Drawing.Size(750, 380);
+            this.employeesNavigationPage.Size = new System.Drawing.Size(756, 380);
             // 
             // ucRadnici1
             // 
             this.ucRadnici1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucRadnici1.Location = new System.Drawing.Point(0, 0);
             this.ucRadnici1.Name = "ucRadnici1";
-            this.ucRadnici1.Size = new System.Drawing.Size(750, 380);
+            this.ucRadnici1.Size = new System.Drawing.Size(756, 380);
             this.ucRadnici1.TabIndex = 1;
-            //this.ucRadnici1.OnPromjenaRadnika += new Kadrovska_sluzba.ucRadnici.RadnikChangedHandler(this.ucRadnici1_OnPromjenaRadnika);
+            this.ucRadnici1.TrenutniRadnik = null;
             this.ucRadnici1.IzmjenaRadnika += new Kadrovska_sluzba.ucRadnici.RadnikChangedHandler(this.ucRadnici1_IzmjenaRadnika);
             // 
             // employeesLabelControl
@@ -256,16 +260,16 @@
             this.employeesLabelControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.employeesLabelControl.Location = new System.Drawing.Point(0, 0);
             this.employeesLabelControl.Name = "employeesLabelControl";
-            this.employeesLabelControl.Size = new System.Drawing.Size(750, 380);
+            this.employeesLabelControl.Size = new System.Drawing.Size(756, 380);
             this.employeesLabelControl.TabIndex = 0;
             this.employeesLabelControl.Text = "Employees";
             // 
-            // customersNavigationPage
+            // employeeNavigationPage
             // 
-            this.customersNavigationPage.Controls.Add(this.ucRadnik1);
-            this.customersNavigationPage.Controls.Add(this.customersLabelControl);
-            this.customersNavigationPage.Name = "customersNavigationPage";
-            this.customersNavigationPage.Size = new System.Drawing.Size(750, 380);
+            this.employeeNavigationPage.Controls.Add(this.ucRadnik1);
+            this.employeeNavigationPage.Controls.Add(this.customersLabelControl);
+            this.employeeNavigationPage.Name = "employeeNavigationPage";
+            this.employeeNavigationPage.Size = new System.Drawing.Size(756, 380);
             // 
             // ucRadnik1
             // 
@@ -273,7 +277,8 @@
             this.ucRadnik1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ucRadnik1.Location = new System.Drawing.Point(0, 0);
             this.ucRadnik1.Name = "ucRadnik1";
-            this.ucRadnik1.Size = new System.Drawing.Size(750, 380);
+            this.ucRadnik1.Radnik = null;
+            this.ucRadnik1.Size = new System.Drawing.Size(756, 380);
             this.ucRadnik1.TabIndex = 2;
             // 
             // customersLabelControl
@@ -289,9 +294,38 @@
             this.customersLabelControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customersLabelControl.Location = new System.Drawing.Point(0, 0);
             this.customersLabelControl.Name = "customersLabelControl";
-            this.customersLabelControl.Size = new System.Drawing.Size(750, 380);
+            this.customersLabelControl.Size = new System.Drawing.Size(756, 380);
             this.customersLabelControl.TabIndex = 1;
             this.customersLabelControl.Text = "Customers";
+            // 
+            // sifarniciNavigationPage
+            // 
+            this.sifarniciNavigationPage.Controls.Add(this.ucSifarnici1);
+            this.sifarniciNavigationPage.Name = "sifarniciNavigationPage";
+            this.sifarniciNavigationPage.Size = new System.Drawing.Size(756, 380);
+            // 
+            // ucSifarnici1
+            // 
+            this.ucSifarnici1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucSifarnici1.Location = new System.Drawing.Point(0, 0);
+            this.ucSifarnici1.Name = "ucSifarnici1";
+            this.ucSifarnici1.Size = new System.Drawing.Size(756, 380);
+            this.ucSifarnici1.TabIndex = 0;
+            // 
+            // navigationPage1
+            // 
+            this.navigationPage1.Caption = "navigationPage1";
+            this.navigationPage1.Name = "navigationPage1";
+            this.navigationPage1.Size = new System.Drawing.Size(750, 380);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Šifarnici";
+            this.barButtonItem1.Id = 48;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick_1);
             // 
             // frmMain
             // 
@@ -315,7 +349,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame)).EndInit();
             this.navigationFrame.ResumeLayout(false);
             this.employeesNavigationPage.ResumeLayout(false);
-            this.customersNavigationPage.ResumeLayout(false);
+            this.employeeNavigationPage.ResumeLayout(false);
+            this.sifarniciNavigationPage.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,13 +372,17 @@
         private DevExpress.XtraNavBar.NavBarGroup emloyeeNavBarGroup;
         private DevExpress.XtraBars.Navigation.NavigationPage employeesNavigationPage;
         private DevExpress.XtraEditors.LabelControl employeesLabelControl;
-        private DevExpress.XtraBars.Navigation.NavigationPage customersNavigationPage;
+        private DevExpress.XtraBars.Navigation.NavigationPage employeeNavigationPage;
         private DevExpress.XtraEditors.LabelControl customersLabelControl;
         private DevExpress.XtraBars.BarButtonItem employeesBarButtonItem;
         private DevExpress.XtraBars.BarButtonItem customersBarButtonItem;
         private ucRadnici ucRadnici1;
         private DevExpress.XtraBars.BarButtonItem mnuRadnici;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private ucRadnik ucRadnik1;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup1;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
+        private DevExpress.XtraBars.Navigation.NavigationPage sifarniciNavigationPage;
+        private ucSifarnici ucSifarnici1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

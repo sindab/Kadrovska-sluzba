@@ -138,6 +138,7 @@
             this.bbiDelete.Id = 6;
             this.bbiDelete.ImageOptions.ImageUri.Uri = "Delete";
             this.bbiDelete.Name = "bbiDelete";
+            this.bbiDelete.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // bbiClose
             // 
@@ -145,6 +146,7 @@
             this.bbiClose.Id = 7;
             this.bbiClose.ImageOptions.ImageUri.Uri = "Close";
             this.bbiClose.Name = "bbiClose";
+            this.bbiClose.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
             // barEditItem1
             // 
@@ -190,7 +192,6 @@
             this.Controls.Add(this.mainRibbonControl);
             this.Name = "ucRadnik";
             this.Size = new System.Drawing.Size(800, 600);
-            this.Load += new System.EventHandler(this.ucRadnik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataLayoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();

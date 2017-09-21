@@ -17,48 +17,40 @@ namespace Kadrovska_sluzba
         {
             InitializeComponent();
         }
-        void navBarControl_ActiveGroupChanged(object sender, DevExpress.XtraNavBar.NavBarGroupEventArgs e)
-        {
-            SetujRadnika();
-            navigationFrame.SelectedPageIndex = navBarControl.Groups.IndexOf(e.Group);
-        }
-        void barButtonNavigation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            SetujRadnika();
-            int barItemIndex = barSubItemNavigation.ItemLinks.IndexOf(e.Link);
-            navBarControl.ActiveGroup = navBarControl.Groups[barItemIndex];
-        }
-
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
+        void navBarControl_ActiveGroupChanged(object sender, DevExpress.XtraNavBar.NavBarGroupEventArgs e)
+        {
+            ucRadnik1.Radnik = ucRadnici1.TrenutniRadnik;
+            navigationFrame.SelectedPageIndex = navBarControl.Groups.IndexOf(e.Group);
+        }
+        void barButtonNavigation_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ucRadnik1.Radnik = ucRadnici1.TrenutniRadnik;
+            int barItemIndex = barSubItemNavigation.ItemLinks.IndexOf(e.Link);
+            navBarControl.ActiveGroup = navBarControl.Groups[barItemIndex];
+        }
+
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SetujRadnika();
+            //radnici
             navBarControl.ActiveGroup= navBarControl.Groups[0];
+        }
+
+        private void ucRadnici1_IzmjenaRadnika(object myObject, ucRadnici.RadnikArgs myArgs)
+        {
+            //radnik
+            ucRadnik1.Radnik = myArgs.Radnik;
+            navBarControl.ActiveGroup = navBarControl.Groups[1];
         }
 
         private void barButtonItem1_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SetujRadnika();
-            navBarControl.ActiveGroup = navBarControl.Groups[1];
-        }
-
-        //private void ucRadnici1_OnPromjenaRadnika(object myObject, ucRadnici.RadnikArgs myArgs)
-        //{
-        //    ucRadnik1.Radnik = ucRadnici1.TrenutniRadnik;
-        //    //navBarControl.ActiveGroup = navBarControl.Groups[1];
-        //}
-        private void ucRadnici1_IzmjenaRadnika(object myObject, ucRadnici.RadnikArgs myArgs)
-        {
-            SetujRadnika();
-            navBarControl.ActiveGroup = navBarControl.Groups[1];
-        }
-        private void OtvoriJednogRadnika()
-        {
-            ucRadnik1.Radnik = ucRadnici1.TrenutniRadnik;
+            //sifarnici
+            navBarControl.ActiveGroup = navBarControl.Groups[2];
         }
     }
 }
